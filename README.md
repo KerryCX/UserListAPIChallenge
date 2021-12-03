@@ -16,3 +16,9 @@ Test it by console. Logging the response/response data.
 The response will have a status: 201 or 200 and something. 
 The data will have an id and a createdAt field.
 
+# Exercise 2
+
+**Part 1:**
+Make a form with at least two fields and a submit button.
+When the form is submitted, send the data to create a new user in the reqres api.
+When the submission is complete, display a success message.

@@ -21,3 +21,11 @@ fetch("https://reqres.in/api/user/101", {
 }).catch(e =>{
     console.log(e)
 })
+
+/*
+# Exercise 2
+**Part 1:**
+Make a form with at least two fields and a submit button.
+When the form is submitted, send the data to create a new user in the reqres api.
+ When the submission is complete, display a success message.
+*/

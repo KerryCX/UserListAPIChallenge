@@ -23,16 +23,16 @@
 input{
     height: 50px;
     width: 300px;
-
+    font-size: 40px;
 }
-form{
+
+.form-user{
     background-color: bisque;
-    height: 500px;
+    height: 600px;
     width: 600px;
     font-size: 40px;
     padding: 20px;
 }
-
 li{
     display:inline-block;
 }
@@ -50,3 +50,11 @@ label{
     font-weight: bold;
 }
 
+.response-box{
+    background-color: transparent;
+    height: 5px;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+    text-overflow: ellipsis;
+}

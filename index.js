@@ -52,7 +52,7 @@ submitClicked.addEventListener("click", ()=>{
         console.log("Response Code: " + response.status + ". Status: " + response.statusText)
         return response.json()
     }).then((res)=>{
-        console.log("The user "+res+" with the job of "+res.job+" was created with id: "+res.id+" at "+res.createdAt)
+        console.log("The user "+res.name+" with the job of "+res.job+" was created with id "+res.id+" at "+res.createdAt)
         responseField.innerText = "Success"
     }).catch(e =>{
         console.log(e)

@@ -132,10 +132,11 @@ submitClicked.addEventListener("click", ()=>{
         }else {
             console.log("The user " + res.name + " with the job of " + res.job + " was created with id " + res.id + " at " + res.createdAt)
             responseField.innerText = "Successfully added username "+res.name
-            const userList = "Successfully added username "+res.name
+            const userList = (res.name + " " + res.job)
             nameField.value = ""
             jobField.value = ""
             console.log(userList)
+            userListField.insertAdjacentHTML("afterbegin", "<p>" + userList +"</p>")
         }
     }).catch(e =>{
         console.log((e).message)

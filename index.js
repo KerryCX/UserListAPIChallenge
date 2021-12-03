@@ -65,7 +65,7 @@ submitClicked.addEventListener("click", ()=>{
 **Part 2:**
 Add an if statement. If the user id is higher than 500, throw an error.
     Display the error message to the user, and do not display a success message.
-*/
+*//*
 const submitClicked = document.querySelector("#submit")
 
 submitClicked.addEventListener("click", ()=>{
@@ -100,4 +100,46 @@ submitClicked.addEventListener("click", ()=>{
     })
     nameField.value = ""
     jobField.value = ""
+})*/
+/*
+# Exercise 3:
+**Part 1:**
+Display all the users below your form.*/
+const submitClicked = document.querySelector("#submit")
+
+submitClicked.addEventListener("click", ()=>{
+    const nameField = document.querySelector("#name")
+    const jobField = document.querySelector("#job")
+    const responseField = document.querySelector("#response-box")
+    const userListField = document.querySelector("#user-list")
+    responseField.innerText = ""
+
+    fetch("https://reqres.in/api/user/101", {
+        method: 'POST',
+        body: JSON.stringify({
+            name: nameField.value,
+            job: jobField.value
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(response => {
+        console.log("Response Code: " + response.status + ". Status: " + response.statusText)
+        return response.json()
+    }).then((res)=>{
+        if(res.id>500){
+            throw new Error("username "+res.name+" with the job "+res.job+" was not added at id "+res.id)
+        }else {
+            console.log("The user " + res.name + " with the job of " + res.job + " was created with id " + res.id + " at " + res.createdAt)
+            responseField.innerText = "Successfully added username "+res.name
+            const userList = "Successfully added username "+res.name
+            nameField.value = ""
+            jobField.value = ""
+            console.log(userList)
+        }
+    }).catch(e =>{
+        console.log((e).message)
+        responseField.innerText = "Failure: "+(e).message
+    })
+
 })

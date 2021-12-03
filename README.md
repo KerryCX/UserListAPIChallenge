@@ -26,3 +26,7 @@ When the submission is complete, display a success message.
 **Part 2:**
 Add an if statement. If the user id is higher than 500, throw an error.
 Display the error message to the user, and do not display a success message.
+
+# Exercise 3:
+**Part 1:**
+Display all the users below your form.
